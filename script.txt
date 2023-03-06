@@ -1,0 +1,8 @@
+composer global require laravel/installer
+composer create-project laravel/laravel larazillow
+php artisan serve
+npm install --save-dev vue @vitejs/plugin-vue
+npm run dev
+composer require inertiajs/inertia-laravel
+npm install --save-dev @inertiajs/vue3
+npm install --save-dev eslint eslint-plugin-vue
