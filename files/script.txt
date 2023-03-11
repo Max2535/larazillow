@@ -6,3 +6,34 @@ npm run dev
 composer require inertiajs/inertia-laravel
 npm install --save-dev @inertiajs/vue3
 npm install --save-dev eslint eslint-plugin-vue
+composer require barryvdh/laravel-debugbar --dev
+composer require --dev barryvdh/laravel-ide-helper
+php artisan ide-helper:generate
+php artisan db:show
+php artisan make:model Listing -m
+php artisan migrate
+php artisan make:migration add_fields_to_listings_table
+php artisan migrate:rollback
+php artisan migrate:status
+php artisan migrate
+php artisan make:factory ListingFactory
+php artisan db:seed
+php artisan migrate:refresh
+php artisan tinker
+    use App\Models\Listing
+    App\Models\Listing::all()
+    App\Models\Listing::find(15)
+    App\Models\Listing::where('beds','>',4)->get()
+    App\Models\Listing::where('beds','>',4)->where('area','>',200)->get()
+    App\Models\Listing::where('beds','>',4)->where('area','>',200)->orderBy('beds','desc')->get()
+    App\Models\Listing::where('beds','>=',4)->where('area','>',200)->orderBy('price','asc')->first()
+
+App\Models\Listing:: create([
+  'beds' => 2, 'baths' => 2, 'area' => 100, 'city' => 'North', 'street' => 'Tinker st', 'street_nr' => 20, 'code' => 'TS', 'price' => 200_000
+])
+php artisan make:controller ListingController --resource
+php artisan route:list
+php artisan inertia:middleware
+
+composer require tightenco/ziggy
+
